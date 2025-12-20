@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Tahoma", "MS Sans Serif", Arial, sans-serif;
+  background-color: #000080;
+  color: #000000;
+  overflow: hidden;
+}
+
+/* Fake wallpaper */
+#wallpaper {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, #0044aa, #000022 60%),
+    radial-gradient(circle at bottom right, #0099ff, #000022 60%);
+  filter: saturate(1.2);
+}
+
+/* Taskbar */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: #0c2461;
+  border-top: 2px solid #1e3799;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 11px;
+  z-index: 10;
+}
+
+.taskbar-start {
+  margin-left: 4px;
+  padding: 2px 10px;
+  background: #0b8457;
+  border: 2px solid #04471c;
+  font-weight: bold;
+}
+
+.taskbar-title {
+  margin-left: 8px;
+  flex: 1;
+  padding: 2px 6px;
+  background: #1e3799;
+  border: 1px solid #0c2461;
+}
+
+.taskbar-clock {
+  padding: 0 8px;
+}
+
+/* Desktop icon */
+.desktop-icon {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  width: 70px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.icon-image {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 4px;
+  background: linear-gradient(135deg, #00ffff, #0066ff);
+  border: 2px solid #ffffff;
+}
+
+.icon-label {
+  text-shadow: 1px 1px 1px #000000;
+}
+
+/* Window */
+.window {
+  position: absolute;
+  top: 60px;
+  left: 140px;
+  width: 900px;
+  height: 520px;
+  background: #c0c0c0;
+  border: 2px solid #ffffff;
+  box-shadow: 4px 4px 0 #000000;
+  display: flex;
+  flex-direction: column;
+}
+
+.window-titlebar {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #ffffff;
+  padding: 3px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+}
+
+.window-buttons button {
+  width: 18px;
+  height: 16px;
+  margin-left: 2px;
+  border: 1px solid #ffffff;
+  background: #c0c0c0;
+  font-size: 10px;
+  padding: 0;
+}
+
+.window-toolbar {
+  background: #d4d0c8;
+  padding: 3px 6px;
+  font-size: 11px;
+  border-bottom: 1px solid #808080;
+}
+
+.window-toolbar span {
+  margin-right: 8px;
+}
+
+/* Window content */
+.window-content {
+  flex: 1;
+  display: flex;
+  background: #ffffff;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 190px;
+  border-right: 1px solid #808080;
+  background: #e4e0d8;
+  padding: 6px;
+  font-size: 11px;
+}
+
+.sidebar-header {
+  margin: 6px 0 4px;
+  font-weight: bold;
+  border-bottom: 1px solid #808080;
+}
+
+.sidebar-list {
+  list-style: square;
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+
+/* Main area */
+.main {
+  flex: 1;
+  padding: 6px;
+  font-size: 11px;
+  overflow: auto;
+  background: #ffffff;
+}
+
+.section {
+  margin-bottom: 8px;
+  border: 1px solid #808080;
+  background: #ffffff;
+}
+
+.section-title {
+  background: #000080;
+  color: #ffffff;
+  padding: 3px 5px;
+  font-weight: bold;
+}
+
+.status-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.status-table th,
+.status-table td {
+  border: 1px solid #808080;
+  padding: 3px 4px;
+}
+
+.status-table th {
+  background: #d4d0c8;
+}
+
+.status-ok {
+  color: #008000;
+  font-weight: bold;
+}
+
+.status-warn {
+  color: #cc7a00;
+  font-weight: bold;
+}
+
+.status-alert {
+  color: #cc0000;
+  font-weight: bold;
+}
+
+.layout-two {
+  display: flex;
+}
+
+.layout-two .panel {
+  flex: 1;
+  border-left: 1px solid #808080;
+}
+
+.panel-title {
+  background: #d4d0c8;
+  padding: 3px 5px;
+  border-bottom: 1px solid #808080;
+}
+
+.panel-body {
+  padding: 4px;
+}
+
+.map-mock {
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  color: #000080;
+  height: 120px;
+  background: #f4f4f4;
+}
+
+.log {
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  background: #000000;
+  color: #00ff00;
+  height: 120px;
+  overflow: auto;
+}
+
+/* Console */
+.console {
+  background: #000000;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  padding: 5px;
+  height: 90px;
+  overflow: auto;
+}

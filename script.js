@@ -1,3 +1,8 @@
+/**
+ * Update the element with id "taskbar-clock" to display the current local time as "HH:MM".
+ *
+ * Hours and minutes are zero-padded to two digits before being written to the element's textContent.
+ */
 function updateClock() {
   const el = document.getElementById("taskbar-clock");
   const now = new Date();

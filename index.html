@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vessel Portal 2003</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000022 url("https://static.wikia.nocookie.net/neo-windows/images/5/5b/Stars_bg.gif") repeat;
+      color: #00ffcc;
+      font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+    }
+    a { color: #66ffff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrapper {
+      width: 900px;
+      margin: 20px auto;
+      border: 2px solid #00ffff;
+      background: #000010;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    .banner {
+      height: 130px;
+      background: linear-gradient(90deg, #000000, #001144, #000000);
+      border-bottom: 2px solid #00ffff;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner-title {
+      position: absolute;
+      left: 20px;
+      top: 25px;
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px #00ffff;
+    }
+    .banner-sub {
+      position: absolute;
+      left: 22px;
+      top: 70px;
+      font-size: 12px;
+      color: #99ffff;
+    }
+    .banner-scanline {
+      position: absolute;
+      right: -200px;
+      top: 0;
+      width: 200px;
+      height: 130px;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 255, 255, 0.15),
+        rgba(0, 255, 255, 0.15) 2px,
+        transparent 2px,
+        transparent 4px
+      );
+      transform: skewX(-20deg);
+      animation: sweep 6s linear infinite;
+      opacity: 0.6;
+    }
+    @keyframes sweep {
+      0% { right: -220px; }
+      100% { right: 920px; }
+    }
+
+    .nav {
+      background: #001133;
+      border-bottom: 2px solid #00ffff;
+      padding: 4px 0;
+      text-align: center;
+      font-size: 12px;
+    }
+    .nav a {
+      padding: 4px 10px;
+      margin: 0 4px;
+      border: 1px solid #00cccc;
+      background: #000022;
+    }
+    .nav a:hover {
+      background: #003366;
+    }
+
+    .content {
+      display: table;
+      width: 100%;
+    }
+    .sidebar {
+      display: table-cell;
+      width: 210px;
+      border-right: 2px solid #003366;
+      background: #000014;
+      vertical-align: top;
+      padding: 10px;
+      font-size: 11px;
+    }
+    .main {
+      display: table-cell;
+      padding: 12px 14px;
+      vertical-align: top;
+      font-size: 13px;
+    }
+
+    .box {
+      border: 1px solid #004466;
+      margin-bottom: 10px;
+      background: #000020;
+    }
+    .box-header {
+      background: #001a33;
+      padding: 4px 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #004466;
+      color: #99ffff;
+    }
+    .box-body {
+      padding: 6px;
+    }
+    .box-body ul {
+      list-style: square;
+      padding-left: 18px;
+      margin: 4px 0;
+    }
+
+    .ticker {
+      font-size: 11px;
+      color: #99ffff;
+      white-space: nowrap;
+      overflow: hidden;
+      border-top: 1px solid #003366;
+      border-bottom: 1px solid #003366;
+      padding: 3px;
+      background: #000020;
+    }
+
+    .panel {
+      margin-bottom: 12px;
+      border: 1px solid #004466;
+      background: #000018;
+    }
+    .panel-header {
+      background: #001a33;
+      padding: 5px 7px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #004466;
+      color: #99ffff;
+    }
+    .panel-body {
+      padding: 8px 10px;
+      color: #ccffff;
+    }
+
+    .status-grid {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    .status-grid th,
+    .status-grid td {
+      border: 1px solid #004466;
+      padding: 3px 5px;
+      text-align: left;
+    }
+    .status-grid th {
+      background: #001933;
+      color: #99ffff;
+    }
+    .status-ok { color: #66ff66; }
+    .status-alert { color: #ff6666; }
+
+    .footer {
+      text-align: center;
+      font-size: 10px;
+      color: #99cccc;
+      padding: 6px 0 10px;
+      border-top: 2px solid #00ffff;
+      background: #000010;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="banner">
+      <div class="banner-title">Vessel Portal</div>
+      <div class="banner-sub">
+        Fleet Operations • Port Status • Retro Monitoring Console
+      </div>
+      <div class="banner-scanline"></div>
+    </div>
+
+    <div class="nav">
+      <a href="#home">Home</a>
+      <a href="#fleet">Fleet Status</a>
+      <a href="#ports">Port Overview</a>
+      <a href="#logs">Logs</a>
+      <a href="#about">About</a>
+    </div>
+
+    <div class="ticker">
+      &gt; SYSTEM MESSAGE: Vessel Portal v0.1 • Data stream link pending • Interface running in DEMO MODE • Press F5 to refresh telemetry.
+    </div>
+
+    <div class="content" id="home">
+      <div class="sidebar">
+        <div class="box">
+          <div class="box-header">Vessel Links</div>
+          <div class="box-body">
+            <ul>
+              <li>Vessel A – NTP-01</li>
+              <li>Vessel B – NTP-02</li>
+              <li>Vessel C – NTP-03</li>
+              <li>Vessel D – NTP-04</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-header">System Console</div>
+          <div class="box-body">
+            <code>
+              C:\\VESSEL_PORTAL&gt; boot /demo<br>
+              loading routes.cfg... OK<br>
+              loading ports.dat... OK<br>
+              awaiting live feed...
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="panel">
+          <div class="panel-header">Welcome to Vessel Portal</div>
+          <div class="panel-body">
+            <p>
+              Vessel Portal is a retro-styled control surface for monitoring fleet
+              activity across multiple ports and routes. All data on this page is
+              placeholder, ready to be wired into a real backend.
+            </p>
+            <p>
+              Use the navigation bar above to jump between fleet status, port
+              snapshots, and system logs just like an early‑2000s intranet tool.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel" id="fleet">
+          <div class="panel-header">Fleet Status Snapshot</div>
+          <div class="panel-body">
+            <table class="status-grid">
+              <tr>
+                <th>Vessel</th>
+                <th>Route</th>
+                <th>ETA</th>
+                <th>Status</th>
+              </tr>
+              <tr>
+                <td>NTP-01</td>
+                <td>SYD &rarr; MEL</td>
+                <td>03:14</td>
+                <td class="status-ok">On schedule</td>
+              </tr>
+              <tr>
+                <td>NTP-02</td>
+                <td>MEL &rarr; ADL</td>
+                <td>05:42</td>
+                <td class="status-alert">Delay reported</td>
+              </tr>
+              <tr>
+                <td>NTP-03</td>
+                <td>SYD &rarr; BNE</td>
+                <td>01:09</td>
+                <td class="status-ok">Cruising</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel" id="ports">
+          <div class="panel-header">Port Overview</div>
+          <div class="panel-body">
+            <p>
+              Port cameras and maps would normally appear here as low‑res panels,
+              mirroring classic operations dashboards. For now this section acts as a
+              static mockup.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel" id="logs">
+          <div class="panel-header">System Log (Demo)</div>
+          <div class="panel-body">
+            <pre>
+[03:02] LINK SYD-OPS: Handshake OK
+[03:05] LINK MEL-OPS: Timeout (retrying)
+[03:07] ROUTE NTP-02: Speed reduced due to weather
+[03:10] ROUTE NTP-03: Position update received
+            </pre>
+          </div>
+        </div>
+
+        <div class="panel" id="about">
+          <div class="panel-header">About This Interface</div>
+          <div class="panel-body">
+            <p>
+              This is a static HTML mock built in the style of early‑2000s web apps:
+              table layout, neon borders, system fonts, and console‑like text. Hook it
+              up to a JSON/API backend later to turn it into a living dashboard.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Vessel Portal &copy; 2003–2025 • Retro Fleet Interface Experiment
+    </div>
+  </div>
+</body>
+</html>
